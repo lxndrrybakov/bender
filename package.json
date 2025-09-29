@@ -1,0 +1,20 @@
+{
+  "name": "bender",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bender - client celebration automation for real estate agencies.",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace server\" \"npm run dev --workspace client\"",
+    "dev:client": "npm run dev --workspace client",
+    "dev:server": "npm run dev --workspace server",
+    "preview:client": "npm run preview --workspace client",
+    "build": "npm run build --workspace server && npm run build --workspace client"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
